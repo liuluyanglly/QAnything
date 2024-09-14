@@ -1,7 +1,7 @@
 <template>
   <div class="bots-home-comp">
     <div class="title">
-      <span>QAnything </span>
+      <span>Melon </span>
       <span>Bots</span>
     </div>
     <div class="intro">{{ bots.botsHomeDesc1 }}</div>

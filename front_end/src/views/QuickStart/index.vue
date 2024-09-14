@@ -368,7 +368,7 @@ const textKeydownHandle = e => {
 const like = useThrottleFn((item, e) => {
   item.like = !item.like;
   item.unlike = false;
-  _czc.push(['_trackEvent', 'qanything', '问答页面', '点赞', '', '']);
+  _czc.push(['_trackEvent', 'melon', '问答页面', '点赞', '', '']);
   if (item.like) {
     e.target.parentNode.style.animation = 'shake ease-in .5s';
     const timer = setTimeout(() => {
@@ -380,7 +380,7 @@ const like = useThrottleFn((item, e) => {
 const unlike = (item: IChatItem) => {
   item.unlike = !item.unlike;
   item.like = false;
-  _czc.push(['_trackEvent', 'qanything', '问答页面', '点踩', '', '']);
+  _czc.push(['_trackEvent', 'melon', '问答页面', '点踩', '', '']);
 };
 
 //拷贝
