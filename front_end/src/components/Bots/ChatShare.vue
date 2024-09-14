@@ -8,13 +8,13 @@
       <ul id="chat-ul" ref="scrollDom">
         <div class="ai">
           <div class="content">
-            <img class="avatar" src="@/assets/home/ai-avatar.png" alt="头像" />
+            <img class="avatar" src="@/assets/home/ai-avatar2.png" alt="头像" />
             <p class="question-text" v-html="botInfo.welcome_message"></p>
           </div>
         </div>
         <li v-for="(item, index) in QA_List" :key="index">
           <div v-if="item.type === 'user'" class="user">
-            <img class="avatar" src="@/assets/home/avatar.png" alt="头像" />
+            <img class="avatar" src="@/assets/home/avatar2.png" alt="头像" />
             <p class="question-text">{{ item.question }}</p>
           </div>
           <div v-else class="ai">

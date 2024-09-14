@@ -10,10 +10,10 @@
   <div class="header">
     <div class="logo">
       <img
-        src="../assets/login/logo-small.png"
+        src="../assets/login/logo-small1.png"
         :style="{ marginTop: navIndex === -1 ? '' : '14px' }"
         alt="logo"
-        @click="goDetail('https://ai.youdao.com/')"
+        @click="goDetail('')"
       />
     </div>
     <div class="header-navs">
@@ -32,7 +32,7 @@
       <!-- <li @click="goDetail('https://ai.youdao.com/qanything.s')">
         <img src="../assets/home/icon-home.png" alt="首页" /><span>首页</span>
       </li>
-      <li><img src="../assets/home/icon-document.png" alt="开发文档" /><span>开发文档</span></li> -->
+      <li><img src="../assets/home/icon-document.png" alt="开发文档" /><span>开发文档</span></li>
       <li class="toggle-button">
         <span :class="[language === 'zh' ? 'active' : '']" @click="changLanguage('zh')">中</span>
         <span class="line"></span>
@@ -59,45 +59,38 @@
           <LineChartOutlined style="margin-right: 5px" />
           <span>{{ header.statistics }}</span>
         </div>
-      </li>
+      </li> -->
     </ul>
   </div>
 </template>
 <script lang="ts" setup>
-// import { useUser } from '@/store/useUser';
-// const { userInfo } = storeToRefs(useUser());
-import { LineChartOutlined } from '@ant-design/icons-vue';
 import { useHeader } from '@/store/useHeader';
-import { useLanguage } from '@/store/useLanguage';
 import { getLanguage } from '@/language/index';
 import routeController from '@/controller/router';
 
-const header = getLanguage().header;
-const { language } = storeToRefs(useLanguage());
 const { navIndex } = storeToRefs(useHeader());
-const { setLanguage } = useLanguage();
 const { setNavIndex } = useHeader();
 const { changePage } = routeController();
 
 const navList = [
-  {
-    name: getLanguage().header.quickStart,
-    value: 2,
-  },
+  // {
+  //   name: getLanguage().header.quickStart,
+  //   value: 2,
+  // },
   {
     name: getLanguage().header.knowledge,
     value: 0,
   },
-  {
-    name: 'Bots',
-    value: 1,
-  },
+  // {
+  //   name: 'Bots',
+  //   value: 1,
+  // },
 ];
 
-const changLanguage = (lang: string) => {
-  setLanguage(lang);
-  window.location.reload();
-};
+// const changLanguage = (lang: string) => {
+//   setLanguage(lang);
+//   window.location.reload();
+// };
 
 const goDetail = (url: string) => {
   console.log(url);
@@ -128,10 +121,10 @@ const getIcon = itemValue => {
   return iconMap.get(itemValue);
 };
 
-const goStatistics = () => {
-  setNavIndex(-1);
-  changePage('/statistics');
-};
+// const goStatistics = () => {
+//   setNavIndex(-1);
+//   changePage('/statistics');
+// };
 </script>
 <style lang="scss" scoped>
 .header {
